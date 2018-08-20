@@ -230,14 +230,14 @@
     "x": 126,
     "y": 170
   },
-  "bicycle_share_11": {
+  "bicycle_rental_11": {
     "height": 34,
     "pixelRatio": 2,
     "width": 34,
     "x": 630,
     "y": 458
   },
-  "bicycle_share_15": {
+  "bicycle_rental_15": {
     "height": 42,
     "pixelRatio": 2,
     "width": 42,
@@ -1133,42 +1133,42 @@
     "x": 294,
     "y": 254
   },
-  "rail_11": {
+  "rail_light_11": {
     "height": 30,
     "pixelRatio": 2,
     "width": 30,
     "x": 564,
     "y": 296
   },
-  "rail_15": {
+  "rail_light_15": {
     "height": 38,
     "pixelRatio": 2,
     "width": 38,
     "x": 380,
     "y": 420
   },
-  "rail_light_11": {
+  "rail_metro_11": {
     "height": 30,
     "pixelRatio": 2,
     "width": 30,
     "x": 594,
     "y": 296
   },
-  "rail_light_15": {
+  "rail_metro_15": {
     "height": 38,
     "pixelRatio": 2,
     "width": 38,
     "x": 418,
     "y": 420
   },
-  "rail_metro_11": {
+  "railway_11": {
     "height": 30,
     "pixelRatio": 2,
     "width": 30,
     "x": 624,
     "y": 296
   },
-  "rail_metro_15": {
+  "railway_15": {
     "height": 38,
     "pixelRatio": 2,
     "width": 38,

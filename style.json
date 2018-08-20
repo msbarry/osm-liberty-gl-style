@@ -16,10 +16,10 @@
     },
     "openmaptiles": {
       "type": "vector",
-      "url": "https://free.tilehosting.com/data/v3.json?key=tXiQqN3lIgskyDErJCeY"
+      "url": "https://free.tilehosting.com/data/v3.json?key={key}"
     }
   },
-  "sprite": "https://rawgit.com/lukasmartinelli/osm-liberty/gh-pages/sprites/osm-liberty",
+  "sprite": "https://rawgit.com/maputnik/osm-liberty/gh-pages/sprites/osm-liberty",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
@@ -58,9 +58,6 @@
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "park",
-      "filter": [
-        "all"
-      ],
       "paint": {
         "fill-color": "#d8e8c8",
         "fill-opacity": 0.7,
@@ -72,9 +69,6 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "park",
-      "filter": [
-        "all"
-      ],
       "paint": {
         "line-dasharray": [
           1,
@@ -1176,6 +1170,90 @@
       ]
     },
     {
+      "id": "tunnel_transit_rail",
+      "type": "line",
+      "metadata": {},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "brunnel",
+          "tunnel"
+        ],
+        [
+          "in",
+          "class",
+          "transit"
+        ]
+      ],
+      "paint": {
+        "line-color": "#bbb",
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [
+              14,
+              0.4
+            ],
+            [
+              15,
+              0.75
+            ],
+            [
+              20,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "tunnel_transit_rail_hatching",
+      "metadata": {},
+      "paint": {
+        "line-color": "#bbb",
+        "line-dasharray": [
+          0.2,
+          8
+        ],
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [
+              14.5,
+              0
+            ],
+            [
+              15,
+              3
+            ],
+            [
+              20,
+              8
+            ]
+          ]
+        }
+      },
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "brunnel",
+          "tunnel"
+        ],
+        [
+          "==",
+          "class",
+          "transit"
+        ]
+      ]
+    },
+    {
       "id": "road_area_pattern",
       "metadata": {},
       "paint": {
@@ -1497,15 +1575,10 @@
           "class",
           "primary",
           "trunk"
-        ],
-        [
-          "!=",
-          "ramp",
-          1
         ]
       ],
       "layout": {
-        "line-cap": "round",
+        "line-cap": "butt",
         "line-join": "round",
         "visibility": "visible"
       },
@@ -1891,7 +1964,7 @@
         ]
       ],
       "layout": {
-        "line-cap": "round",
+        "line-cap": "butt",
         "line-join": "round",
         "visibility": "visible"
       }
@@ -2043,6 +2116,92 @@
           "==",
           "class",
           "rail"
+        ]
+      ]
+    },
+     {
+      "id": "road_transit_rail",
+      "type": "line",
+      "metadata": {},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "!in",
+          "brunnel",
+          "bridge",
+          "tunnel"
+        ],
+        [
+          "==",
+          "class",
+          "transit"
+        ]
+      ],
+      "paint": {
+        "line-color": "#bbb",
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [
+              14,
+              0.4
+            ],
+            [
+              15,
+              0.75
+            ],
+            [
+              20,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_transit_rail_hatching",
+      "metadata": {},
+      "paint": {
+        "line-color": "#bbb",
+        "line-dasharray": [
+          0.2,
+          8
+        ],
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [
+              14.5,
+              0
+            ],
+            [
+              15,
+              3
+            ],
+            [
+              20,
+              8
+            ]
+          ]
+        }
+      },
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "!in",
+          "brunnel",
+          "bridge",
+          "tunnel"
+        ],
+        [
+          "==",
+          "class",
+          "transit"
         ]
       ]
     },
@@ -2991,6 +3150,90 @@
       ]
     },
     {
+      "id": "bridge_transit_rail",
+      "type": "line",
+      "metadata": {},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "transit"
+        ],
+        [
+          "==",
+          "brunnel",
+          "bridge"
+        ]
+      ],
+      "paint": {
+        "line-color": "#bbb",
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [
+              14,
+              0.4
+            ],
+            [
+              15,
+              0.75
+            ],
+            [
+              20,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "bridge_transit_rail_hatching",
+      "metadata": {},
+      "paint": {
+        "line-color": "#bbb",
+        "line-dasharray": [
+          0.2,
+          8
+        ],
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [
+              14.5,
+              0
+            ],
+            [
+              15,
+              3
+            ],
+            [
+              20,
+              8
+            ]
+          ]
+        }
+      },
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "transit"
+        ],
+        [
+          "==",
+          "brunnel",
+          "bridge"
+        ]
+      ]
+    },
+    {
       "id": "boundary_3",
       "type": "line",
       "metadata": {},
@@ -3284,7 +3527,7 @@
       "source": "openmaptiles",
       "source-layer": "poi",
       "layout": {
-        "icon-image": "{maki}_11",
+        "icon-image": "{class}_11",
         "text-anchor": "left",
         "text-field": "{name_en}",
         "text-font": [
