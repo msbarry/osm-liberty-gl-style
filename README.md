@@ -88,4 +88,4 @@ Green        | `#76a723`
 3. Ensure you format the JSON first with `cat iconset.json | jq -MS '.'`
 4. Install [spritezero](https://github.com/mapbox/spritezero) `npm install spritezero-cli`
 5. Generate the low resolution sprites `spritezero sprites/osm-liberty ./svgs/`
-6. Generate the high resolution sprites `spritezero sprites/osm-liberty@2x ./svgs/`
+6. Generate the high resolution sprites `spritezero --retina sprites/osm-liberty@2x ./svgs/`
